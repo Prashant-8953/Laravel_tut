@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DemoController;
 use  App\Http\Controllers\DemoSingleActionController;
 use App\Http\Controllers\DemoResourceController;
+use App\Http\Controllers\formLogic;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,20 +66,23 @@ use App\Http\Controllers\DemoResourceController;
 // basic controller routes----
 
 // [classname::class ,'function name in controllers files maked']
-Route::get('/home',[DemoController::class,'home']);
-// Route::get('/about',[DemoController::class,'about']);
+// Route::get('/home',[DemoController::class,'home']);
+// // Route::get('/about',[DemoController::class,'about']);
 
-// old 1 laravel me call karne ka method-----
-Route::get('/about','App\Http\Controllers\DemoController@about');
+// // old 1 laravel me call karne ka method-----
+// Route::get('/about','App\Http\Controllers\DemoController@about');
 
-// singleActioncontroller routes----
-Route::get('/raj', DemoSingleActionController::class);// inclde always controller files in routes.
+// // singleActioncontroller routes----
+// Route::get('/raj', DemoSingleActionController::class);// inclde always controller files in routes.
 
-// Resource controller routes -----
+// // Resource controller routes -----
 
-Route::resource('/',DemoResourceController::class);
-
-
-
+// Route::resource('/',DemoResourceController::class);
 
 //end controllers --------------------
+
+
+// Make a form then create route...
+
+Route::get('/form',[formLogic::class,'index']);
+Route::post('/register',[formLogic::class,'register']);
