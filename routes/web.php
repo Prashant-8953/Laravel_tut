@@ -83,6 +83,7 @@ use App\Http\Controllers\formLogic;
 
 
 // Make a form then create route...
-
 Route::get('/form',[formLogic::class,'index']);
 Route::post('/register',[formLogic::class,'register']);
+
+
