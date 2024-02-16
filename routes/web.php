@@ -5,6 +5,7 @@ use App\Http\Controllers\DemoController;
 use  App\Http\Controllers\DemoSingleActionController;
 use App\Http\Controllers\DemoResourceController;
 use App\Http\Controllers\formLogic;
+use App\Models\customers;
 
 /*
 |--------------------------------------------------------------------------
@@ -86,4 +87,12 @@ use App\Http\Controllers\formLogic;
 Route::get('/form',[formLogic::class,'index']);
 Route::post('/register',[formLogic::class,'register']);
 
+Route::get('/raj',function(){
 
+    // select query likhne ka tarika
+
+    $customer = customers::all();
+    echo "<pre>";
+    print_r($customer->toarray());
+
+});

@@ -68,72 +68,16 @@
         <h1>Styled Form</h1>
         <form action="{{url('/')}}/register" method="POST">
             @csrf
+<div>
 
-            <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" value="{{old('name')}}">
-                <span style="color: red;">
-                
-                    @error('name')
-
-                    {{$message}}
-                        
-                    @enderror
-            </span>
-            </div>
-
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" value="{{old('email')}}">
-                <span style="color: red;">
-                
-                    @error('email')
-
-                    {{$message}}
-                        
-                    @enderror
-            </span>
-            </div>
-
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" >
-                <span style="color: red;">
-                
-                    @error('password')
-
-                    {{$message}}
-                        
-                    @enderror
-            </span>
-            </div>
-
-            <div class="form-group">
-                <label for="confirm_password">Confirm Password:</label>
-                <input type="password" id="confirm_password" name="confirm_password">
-                <span style="color: red;">
-                
-                    @error('confirm_password')
-
-                    {{$message}}
-                        
-                    @enderror
-            </span>
-            </div>
-
-            <div class="form-group">
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4">{{ old('message') }}</textarea>
-                <span style="color: red;">
-                
-                    @error('message')
-
-                    {{$message}}
-                        
-                    @enderror
-            </span>
-            </div>
-
+    <x-input_form type="text"/>
+    <x-input_form type="email"/>
+    <x-input_form type="password"/>
+    <x-input_form type="password"/>
+    <x-input_form type="Checkbox"/>
+</div>
+           
+            
             <div class="form-group">
                 <input type="submit" value="Submit">
             </div>
